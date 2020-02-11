@@ -31,6 +31,11 @@ class MaintenanceLoginMessageTest < TestCase
       browser: browser1,
       css:     '#global-search',
     )
+    watch_for(
+      browser: browser1,
+      css:     '.noty_text',
+      value:   'Update successful!'
+    )
 
     browser2 = browser_instance
     location(
