@@ -11,6 +11,7 @@ ZAMMAD_VERSION="$(git describe --tags | sed -e 's/-[a-z0-9]\{8,\}.*//g')"
 
 env
 # clone docker repo
+echo "https://github.com/${REPO_USER}/${DOCKER_GITHUB_REPOSITORY}"
 git clone https://github.com/"${REPO_USER}"/"${DOCKER_GITHUB_REPOSITORY}"
 
 # dockerhub auth
