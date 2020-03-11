@@ -10,12 +10,12 @@ REPO_ROOT="$(git rev-parse --show-toplevel)"
 ZAMMAD_VERSION="$(git describe --tags | sed -e 's/-[a-z0-9]\{8,\}.*//g')"
 
 env
+# clone docker repo
+git clone https://github.com/"${REPO_USER}"/"${DOCKER_GITHUB_REPOSITORY}"
 
 # dockerhub auth
 echo "${DOCKER_PASSWORD}" | docker login --username="${DOCKER_USERNAME}" --password-stdin
 
-# clone docker repo
-git clone https://github.com/"${REPO_USER}"/"${DOCKER_GITHUB_REPOSITORY}"
 
 # enter dockerfile dir
 cd "${REPO_ROOT}/${DOCKER_GITHUB_REPOSITORY}"
