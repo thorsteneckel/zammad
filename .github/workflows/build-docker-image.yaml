@@ -13,7 +13,9 @@ jobs:
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       DOCKER_REPOSITORY: "zammad"
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      REPO_USER: ${{ secrets.REPO_USER }}
+      REPO_USER1: ${{ $GITHUB_ACTOR }}
+      REPO_USER2: ${GITHUB_ACTOR}
+      REPO_USER3: "$GITHUB_ACTOR"
     steps:
       - name: Checkout code
         uses: actions/checkout@master
