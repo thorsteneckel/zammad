@@ -9,6 +9,8 @@ DOCKER_REGISTRY="index.docker.io"
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 ZAMMAD_VERSION="$(git describe --tags | sed -e 's/-[a-z0-9]\{8,\}.*//g')"
 
+env
+
 # dockerhub auth
 echo "${DOCKER_PASSWORD}" | docker login --username="${DOCKER_USERNAME}" --password-stdin
 
